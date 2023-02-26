@@ -1,0 +1,33 @@
+package com.company;
+
+public class Main {
+    static int solution(int A[],int n)
+    {
+    //find the max
+        int max=Integer.MIN_VALUE;
+        int count=0;
+
+        for(int i=0;i<n;i++)
+        {
+            if(max<A[i])
+                max=A[i];
+        }
+
+        //count max
+        for(int i=0;i<n;i++)
+            if(A[i]==max)
+                count++;
+
+
+            //result
+            return n-count;
+
+    }
+    public static void main(String[] args) {
+        int A[] = {-3, -2, 6, 8, 4, 8, 5};
+        int n = A.length;
+        int res=solution(A,n);
+        System.out.println(res);
+
+    }
+}
